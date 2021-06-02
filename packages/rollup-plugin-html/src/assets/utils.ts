@@ -7,7 +7,7 @@ import { serialize } from 'v8';
 const hashedLinkRels = ['stylesheet'];
 const linkRels = [...hashedLinkRels, 'icon', 'manifest', 'apple-touch-icon', 'mask-icon'];
 
-function getSrsSetUrls(srcset: string) {
+function getSrcSetUrls(srcset: string) {
   if (!srcset) {
     return [];
   }
@@ -130,7 +130,7 @@ export function getSourcePaths(node: Node) {
 
   let paths: string[] = [];
   if (src) {
-    paths = key !== 'srcset' ? [src] : getSrsSetUrls(src);
+    paths = key !== 'srcset' ? [src] : getSrcSetUrls(src);
   }
 
   return paths;
